@@ -1,10 +1,28 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Box} from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton'
 
 const Home = () => {
+    const [loading, setLoading] = useState(false)
+
+    const createBoard = async () => {
+    }
     return (
-        <div>
-            Home Page
-        </div>
+        <Box sx={{
+            height: '100vh',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <LoadingButton
+                variant='outlined'
+                color='success'
+                onClick={createBoard}
+                loading={loading}
+            >
+                Click here to create your first board
+            </LoadingButton>
+        </Box>
     );
 };
 

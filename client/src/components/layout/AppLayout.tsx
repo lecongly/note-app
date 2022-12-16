@@ -33,12 +33,12 @@ const AppLayout = () => {
             <Box sx={{
                 display: 'flex'
             }}>
+                <Sidebar/>
                 <Box sx={{
                     flexGrow: 1,
                     p: 1,
                     width: 'max-content'
                 }}>
-                    <Sidebar/>
                     <Outlet/>
                 </Box>
             </Box>
