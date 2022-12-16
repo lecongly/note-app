@@ -14,4 +14,10 @@ router.get(
     boardController.getAll
 )
 
+router.put(
+    '/',
+    tokenHandler.verifyToken,
+    boardController.updatePosition
+)
+
 module.exports = router
