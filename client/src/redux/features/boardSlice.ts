@@ -1,15 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit'
-
-interface Board {
-    user: string;
-    icon: string;
-    title: string;
-    description: string;
-    position: number;
-    favourite: boolean;
-    favouritePosition: number;
-    id: string;
-}
+import {Board} from '../../types/board';
 
 interface BoardState {
     value: Board[];

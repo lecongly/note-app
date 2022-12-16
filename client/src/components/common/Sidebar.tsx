@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
         setActiveIndex(activeItem)
     }, [boards, boardId, navigate])
 
-    const onDragEnd = ({source, destination}: { source: any, destination: any }) => {
+    const onDragEnd = async ({source, destination}: { source: any, destination: any }) => {
         const newList = [...boards]
         const [removed] = newList.splice(source.index, 1)
         newList.splice(destination.index, 0, removed)
@@ -51,6 +51,11 @@ const Sidebar: React.FC = () => {
         const activeItem = newList.findIndex(e => e.id === boardId)
         setActiveIndex(activeItem)
         dispatch(setBoards(newList))
+        try {
+            await boardApi.updatePosition({boards: newList})
+        } catch (err) {
+            alert(err)
+        }
     }
     const addBoard = async () => {
         try {
