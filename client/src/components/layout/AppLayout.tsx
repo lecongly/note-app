@@ -5,6 +5,7 @@ import authUtils from '../../utils/authUtils'
 import Loading from '../common/Loading'
 import {useAppDispatch} from '../../redux/store';
 import {setUser} from '../../redux/features/userSlice'
+import Sidebar from '../common/Sidebar';
 
 const AppLayout = () => {
     const navigate = useNavigate()
@@ -37,6 +38,7 @@ const AppLayout = () => {
                     p: 1,
                     width: 'max-content'
                 }}>
+                    <Sidebar/>
                     <Outlet/>
                 </Box>
             </Box>
