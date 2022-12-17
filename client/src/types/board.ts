@@ -7,4 +7,5 @@ export interface Board {
     favourite: boolean;
     favouritePosition: number;
     id: string;
+    sections?: any
 }
