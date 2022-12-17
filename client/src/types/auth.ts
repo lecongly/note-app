@@ -1,3 +1,5 @@
+import {User} from './user';
+
 export interface SignupParams {
     username: string
     password: string
@@ -7,4 +9,13 @@ export interface SignupParams {
 export interface LoginParams {
     username: string
     password: string
+}
+
+export interface AuthResponse {
+    token: string
+    user: User
+}
+
+export interface VerifyResponse {
+    user: User
 }
