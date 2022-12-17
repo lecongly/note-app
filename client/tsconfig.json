@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "target": "es6",
     "useDefineForClassFields": true,
     "lib": [
       "DOM",
@@ -17,12 +16,17 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": [
+      "node",
+      "vite/client"
+    ]
   },
   "include": [
     "src"
