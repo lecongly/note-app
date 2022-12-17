@@ -1,3 +1,5 @@
+import {Section} from './section';
+
 export interface Board {
     user: string;
     icon: string;
@@ -7,5 +9,5 @@ export interface Board {
     favourite: boolean;
     favouritePosition: number;
     id: string;
-    sections?: any
+    sections: Section[]
 }

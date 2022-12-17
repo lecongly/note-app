@@ -2,6 +2,7 @@ import CssBaseLine from '@mui/material/CssBaseline'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
+import './css/custom-scrollbar.css'
 import AppLayout from './components/layout/AppLayout'
 import AuthLayout from './components/layout/AuthLayout'
 import Home from './pages/Home'

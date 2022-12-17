@@ -12,6 +12,7 @@ import Kanban from '../components/common/Kanban';
 import EmojiPicker from '../components/common/EmojiPicker';
 import {setBoards} from '../redux/features/boardSlice';
 import {setFavouriteList} from '../redux/features/favouriteSlice';
+import {Section} from '../types/section';
 
 let timer: any
 const timeout = 500
@@ -20,11 +21,11 @@ const Board = () => {
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const boardId = useParams().boardId as string
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const [sections, setSections] = useState([])
-    const [isFavourite, setIsFavourite] = useState(false)
-    const [icon, setIcon] = useState('')
+    const [title, setTitle] = useState<string>('')
+    const [description, setDescription] = useState<string>('')
+    const [sections, setSections] = useState<Section[]>([])
+    const [isFavourite, setIsFavourite] = useState<boolean>(false)
+    const [icon, setIcon] = useState<string>('')
 
     const boards = useSelector((state: RootState) => state.board.value)
     const favouriteList = useSelector((state: RootState) => state.favourites.value)
