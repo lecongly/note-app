@@ -111,7 +111,8 @@ exports.update = async (req, res) => {
 
         const board = await Board.findByIdAndUpdate(
             boardId,
-            {$set: req.body}
+            {$set: req.body},
+            {new: true}
         )
         res.status(200).json(board)
     } catch (err) {
