@@ -75,14 +75,26 @@ const Kanban = ({boardId, sections}: Props) => {
             destinationTasks.splice(destination.index, 0, removed)
             data[sourceColIndex].tasks = sourceTasks
             data[destinationColIndex].tasks = destinationTasks
+            //Update new position for data
+            for (const sourceTasksKey in sourceTasks) {
+                sourceTasks[sourceTasksKey].position = +sourceTasksKey
+            }
+            for (const destinationTasksKey in destinationTasks) {
+                destinationTasks[destinationTasksKey].position = +destinationTasksKey
+            }
+            //update section for this task
+            destinationTasks[destination.index].section = {...destinationCol, tasks: []}
         } else {
             const [removed] = destinationTasks.splice(source.index, 1)
             destinationTasks.splice(destination.index, 0, removed)
             data[destinationColIndex].tasks = destinationTasks
-        }
 
-        console.log(sourceTasks)
-        console.log(destinationTasks)
+            //Update new position for data
+            for (let destinationTasksKey in destinationTasks) {
+                destinationTasks[destinationTasksKey].position = +destinationTasksKey
+            }
+
+        }
         try {
             await taskApi.updatePosition(boardId, {
                 resourceList: sourceTasks,
